@@ -1,0 +1,19 @@
+.UserDataHeader{
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+.name,.status,.access{
+    font-weight: bolder;
+}
+.name{
+    width: 40%;
+}
+
+.status{
+    width: 30%;
+}
+.access{
+    width: 30%;
+}

@@ -1,0 +1,9 @@
+.UserDataContainer{
+    background-color: white;
+    margin: 5% auto;
+    height: 800px;
+    width: 1350px;
+    border-radius: 15px;
+
+    /* margin-right: 25%; */
+}

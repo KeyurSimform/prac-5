@@ -1,0 +1,16 @@
+.UserDetails{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.NameColumn{
+    width: 30%;
+    margin: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.PersonalDetails{
+    display: flex;
+    flex-direction: column;
+}
