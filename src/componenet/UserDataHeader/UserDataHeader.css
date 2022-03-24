@@ -11,15 +11,15 @@
   
 }
 .name{
-    min-width: 220px;
-    width: 35%;
+    width: 285px;
+    /* width: 32%; */
 }
 
 .status{
-    min-width: 130px;
-    width: 11%;
+    width: 130px;
+    /* width: 11%; */
 }
 .access{
-    min-width: 130px;
-    width: 10%;
+    width: 130px;
+    /* width: 10%; */
 }
