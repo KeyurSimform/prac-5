@@ -16,5 +16,7 @@ const cardSlice = createSlice({
         }
     }
 })
-export const cardActions = cardSlice.actions
-export default cardSlice
+export const cardActions = cardSlice.actions;
+export default cardSlice;
+
+// Here I created the cardslice which will manage the reduceres in a single place.

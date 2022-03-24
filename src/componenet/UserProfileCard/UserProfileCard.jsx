@@ -1,5 +1,6 @@
 import React from "react";
 import "../UserProfileCard/UserProfileCard.css";
+import { PropTypes } from 'prop-types';
 
 const UserProfileCard = (props) => {
 	return (
@@ -19,17 +20,23 @@ const UserProfileCard = (props) => {
 				<div className="CliksDetails">
 					<div className="ReviwedClicks">
 						<div className="ReviwedNumberOfClicks">2400</div>
-						<div>Clicks Reviewed</div>
+						<div className="ClicksReviewed">Clicks Reviewed</div>
 					</div>
 					<div className="VerticalLine"></div>
-					<div className="MonthlyClicks">
+					<div className="MonthlyClicksContainer">
 						<div className="MonthlyNumberOfClicks">6000</div>
-						<div>Monthly Clicks</div>
+						<div className="MonthlyClicks">Monthly Clicks</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
 };
+
+UserProfileCard.propTypes = {
+	name: PropTypes.string,
+	avatar: PropTypes.string,
+	email: PropTypes.string
+}
 
 export default UserProfileCard;

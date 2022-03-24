@@ -1,7 +1,7 @@
 .UserProfileCard{
     position: absolute;
     right: -5%;
-    min-width: 320px;
+    min-width: 280px;
     width: fit-content;
     height: fit-content;
     background-color: white;
@@ -69,23 +69,30 @@
     margin-right: 65%;
     margin-bottom: 3%;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 12px;
+    /* width: 90%; */
 }
 
 .CliksDetails{
     display: flex;  
+    justify-content: space-around;
     width: 100%;
+    font-size: 12px;
+    margin-left: 10px;
 }
 
 .VerticalLine{
     height: 50px;
     width: 1px;
     background-color: grey;
-    margin-left: 12%;
+    margin-left: 5%;
     margin-right: 5%;
 }
 
 .ReviwedNumberOfClicks, .MonthlyNumberOfClicks{
     font-size: 16px;
     font-weight: bolder;
+}
+.MonthlyClicks, .ClicksReviewed{
+    margin-top: 5px;
 }

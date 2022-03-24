@@ -42,3 +42,16 @@
 .OwnerUser{
     color: green;
 }
+
+select{
+    padding: 5px 10px;
+    background-color: #C0C0C0;
+    box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.75);
+    border: 0;
+    /* border-radius: 5px; */
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
