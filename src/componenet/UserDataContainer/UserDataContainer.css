@@ -1,8 +1,11 @@
 .UserDataContainer{
+    position: relative;
     background-color: white;
-    margin: 5% auto;
-    height: 800px;
-    width: 1350px;
+    margin: 5% 20% 5% 10%;
+    min-height: 80vh;
+    height: auto;
+    min-width: 800px;
+    width: 1250px;
     border-radius: 15px;
 
     /* margin-right: 25%; */

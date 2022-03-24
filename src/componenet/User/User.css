@@ -4,13 +4,40 @@
 }
 
 .NameColumn{
+    min-width: 220px;
     width: 30%;
     margin: 20px;
     display: flex;
-    justify-content: space-evenly;
 }
 
 .PersonalDetails{
     display: flex;
-    flex-direction: column;
+    flex-direction: column;    
+    margin-left: 15px;
+    align-self: center;
+    width: 100%;
+}
+
+.Avatar{
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.75);
+}
+.Status, .Access{
+    font-weight: bolder;
+    min-width: 130px;
+    width: 10%;
+}
+/* .Access{
+    width: 10%;
+} */
+.Status, .Access , .AccessIcon {
+    display: flex;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+.OwnerUser{
+    color: green;
 }

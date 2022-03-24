@@ -1,0 +1,90 @@
+.UserProfileCard{
+    position: absolute;
+    right: -5%;
+    width: 30%;
+    min-width: fit-content;
+    height: 500px;
+    background-color: white;
+    bottom: 20%;
+    box-shadow: 17px 24px 47px 15px rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+.ProfileCardAvatar{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px 0px rgba(0,0,0,0.75);
+}
+
+.UserProfileCardContent{
+    padding: 10%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.ProfileCardName{
+    font-size: 20px;
+    font-weight: bolder;
+    margin: 4%;
+}
+.ProfileCardEmail{
+    font-size: 14px;
+    color: grey;
+    margin-bottom: 5%;
+}
+.ProfileCardYourPlan{
+    font-size: 20px;
+    font-weight: bolder;
+    margin-bottom: 7%;
+}
+.ActiveButton{
+    color: white;
+    background-color: orange;
+    border: 2px;
+    padding: 5% 30%;
+    border-radius: 5px;
+    margin-bottom: 5%;
+}
+.PlanUsageOuterContainer{
+    background-color: rgb(200, 200, 104);
+    /* border: 2px solid; */
+    border-radius: 5px;
+    width: 95%;
+    height: 7px;
+    margin-bottom: 5%;
+}
+
+.PlanUsageInnerContainer{
+    background-color: orange;
+    /* border: 2px solid; */
+    
+    border-radius: 5px;
+    /* opacity: ; */
+    width: 65%;
+    height: 7px;
+}
+
+.PlanUsage{
+    margin-right: 65%;
+    margin-bottom: 3%;
+    font-weight: bold;
+}
+
+.CliksDetails{
+    display: flex;  
+    width: 100%;
+}
+
+.VerticalLine{
+    height: 50px;
+    width: 1px;
+    background-color: grey;
+    margin-left: 12%;
+    margin-right: 5%;
+}
+
+.ReviwedNumberOfClicks, .MonthlyNumberOfClicks{
+    font-size: 26px;
+    font-weight: bolder;
+}

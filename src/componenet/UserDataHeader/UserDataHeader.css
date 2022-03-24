@@ -6,14 +6,18 @@
 }
 .name,.status,.access{
     font-weight: bolder;
+    font-size: 25px;
 }
 .name{
-    width: 40%;
+    min-width: 220px;
+    width: 35%;
 }
 
 .status{
-    width: 30%;
+    min-width: 130px;
+    width: 11%;
 }
 .access{
-    width: 30%;
+    min-width: 130px;
+    width: 10%;
 }
