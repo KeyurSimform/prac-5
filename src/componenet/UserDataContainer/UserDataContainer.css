@@ -2,10 +2,11 @@
     position: relative;
     background-color: white;
     margin: 5% 20% 5% 10%;
-    min-height: 80%;
+    /* min-height: px; */
+    min-height: 600px;
     height: auto;
-    min-width: 60%;
-    width: 1250px;
+    /* min-width: 1000px; */
+    width: 1000px;
     border-radius: 15px;
 
     /* margin-right: 25%; */

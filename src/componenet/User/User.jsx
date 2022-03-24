@@ -21,7 +21,7 @@ const User = (props) => {
 
 	return (
 		<div className="UserDetails">
-			<div onMouseEnter={MouseEntereHandler} className="NameColumn">
+			<div onMouseEnter={MouseEntereHandler} onMouseLeave={MouseLeaveHandler} className="NameColumn">
 				<img className="Avatar" src={props.avatar} alt="" />
 				<div className="PersonalDetails">
 					<div className="name">{props.fname + " " + props.lname}</div>
