@@ -11,3 +11,11 @@
 
     /* margin-right: 25%; */
 }
+
+.reqfailed{
+    display: flex;
+    justify-content:center;
+    align-self:center;
+    margin-top: 8rem;
+    color: red              ;
+}

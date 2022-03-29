@@ -1,8 +1,9 @@
 import { createSlice , createAsyncThunk} from "@reduxjs/toolkit";
-import UserApi from "../componenet/UserApi/UserApi";
-
-export const fetchAsyncUser = createAsyncThunk('newUser/fetchAsyncUser', async () =>{
-	const response = await UserApi.get();
+// import UserApi from "../componenet/UserApi/UserApi";
+import axios from "axios";
+export const fetchAsyncUser = createAsyncThunk('newUser/fetchAsyncUser', async (currentPage) =>{
+	const response = await axios.get(`https://reqres.in/api/users?page=${currentPage}`);
+	// console.log(currentPage,response.data);w
 	return response.data;
 })
 
@@ -10,23 +11,28 @@ export const fetchAsyncUser = createAsyncThunk('newUser/fetchAsyncUser', async (
 const userSlice = createSlice({
 	name: "newUser",
 	initialState: {
-		newUser: {},
+		newUser: [],
+		reqStatus : "",
+		currentPage: 1,
+		totalPage : 2,
 	},
-	reducers: {
-		addUser(state, action) {
-			state.newUser = action.payload;
-		},
-	}, 
+	reducers : {
+        setPageNumber(state,action){
+            state.currentPage = action.payload;
+        },
+	},
 	extraReducers: {
-		[fetchAsyncUser.pending]: ()=>{
-			console.log("pending")
+		[fetchAsyncUser.pending]: (state)=>{
+			state.reqStatus = "loading";
 		},
 		[fetchAsyncUser.fulfilled]:(state , {payload})=>{
-			console.log("fullfiled")
-			return {...state, newUser:payload}
+			state.reqStatus = "successfull"
+			state.newUser = payload.data;
+			state.currentPage = payload.page;
+			state.totalPage = payload.total_pages;			
 		},
-		[fetchAsyncUser.rejected]:()=>{
-			console.log("Rejected");
+		[fetchAsyncUser.rejected]:(state)=>{
+			state.reqStatus = "failed"
 		}
 	}
 });

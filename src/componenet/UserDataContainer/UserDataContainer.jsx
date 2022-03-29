@@ -5,7 +5,10 @@ import UserDataHeader from "../UserDataHeader/UserDataHeader";
 import UserProfileCard from "../UserProfileCard/UserProfileCard";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import fetchAsyncUser  from "../../store/UserSlice";
+import { fetchAsyncUser } from "../../store/UserSlice";
+import PropagateLoader from "react-spinners/PropagateLoader";
+import { css } from "@emotion/react";
+import Pagination from "../Pagination/Pagination";
 
 // Here the UserDataContainer is the componenet which hold all the main component of the app
 
@@ -16,32 +19,38 @@ import fetchAsyncUser  from "../../store/UserSlice";
 // here the use selector hook will allow to use the state which is dispatched from any componenet.
 
 const UserDataContainer = () => {
-
 	const dispatch = useDispatch();
+	const currentPage = useSelector((state)=> state.newUser.currentPage);
+	// const postsPerPage = useSelector((state) => state.newUser.postPerPage);
 
 	useEffect(() => {
-
-		dispatch(fetchAsyncUser);
-		// const fetchUser = async () => {
-			// const response = await UserApi.get().catch((err) => {
-			// 	console.log("Error: ", err);
-			// });
-			// // console.log("Api response: ", response.data);
-			// dispatch(userActions.addUser(response.data));
-		// };
-		// fetchUser();
-	}, [dispatch]);
+		dispatch(fetchAsyncUser(currentPage));
+	}, [currentPage]);
+	// console.log(currentPage);
 
 	const UserCard = useSelector((state) => state.UserProfileCard.User);
 
-	const trial = useSelector((state) => state.newUser.newUser);
+	const UserList = useSelector((state) => state.newUser.newUser);
 
+	const ApiReqStatus = useSelector((state) => state.newUser.reqStatus);
+
+	const cssLoader = css`
+		display: flex;
+		justify-content: center;
+		align-self: center;
+		margin-top: 8rem;
+	`;
+
+	
 
 	return (
 		<div className="UserDataContainer">
 			<UserDataHeader />
-			{trial.hasOwnProperty("data") &&
-				trial.data.map((user) => (
+			{ApiReqStatus === "loading" && (
+				<PropagateLoader color={"orange"} css={cssLoader} size={25} />
+			)}
+			{ApiReqStatus === "successfull" &&
+				UserList.map((user) => (
 					<User
 						key={user.id}
 						id={user.id}
@@ -51,12 +60,19 @@ const UserDataContainer = () => {
 						email={user.email}
 					/>
 				))}
+			{ApiReqStatus === "failed" && (
+				<h1 className="reqfailed">Opps :( Something went wrong</h1>
+			)}
 			{UserCard && (
 				<UserProfileCard
 					name={UserCard.name}
 					avatar={UserCard.avatar}
 					email={UserCard.email}
 				/>
+			)}
+
+			{ApiReqStatus === "successfull" && (
+				<Pagination/>
 			)}
 		</div>
 	);
