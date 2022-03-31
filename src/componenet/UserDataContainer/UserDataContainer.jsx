@@ -10,7 +10,6 @@ import PropagateLoader from "react-spinners/PropagateLoader";
 import { css } from "@emotion/react";
 import Pagination from "../Pagination/Pagination";
 
-
 // Here the UserDataContainer is the componenet which hold all the main component of the app
 
 // User componenet will render the users in the list of user
@@ -19,7 +18,6 @@ import Pagination from "../Pagination/Pagination";
 
 // here the use selector hook will allow to use the state which is dispatched from any componenet.
 
-
 const UserDataContainer = () => {
 	const dispatch = useDispatch();
 	const currentPage = useSelector((state)=> state.newUser.currentPage);
@@ -27,13 +25,13 @@ const UserDataContainer = () => {
 
 	useEffect(() => {
 		dispatch(fetchAsyncUser(currentPage));
-	}, [currentPage]);
+	}, [currentPage,dispatch]);
 	// console.log(currentPage);
 
 	const UserCard = useSelector((state) => state.UserProfileCard.User);
 
 	const UserList = useSelector((state) => state.newUser.newUser);
-1	
+
 	const ApiReqStatus = useSelector((state) => state.newUser.reqStatus);
 
 	const cssLoader = css`
