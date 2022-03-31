@@ -26,9 +26,9 @@ const Pagination = () => {
 			<div className="pagination">
 				{pageNumbers.map((number) => (
 					<div key={number} onClick={() => paginate(number)} className="page-item">
-						<a  className="page-link">
+						<div  className="page-link" >
 							{number}
-						</a>
+						</div>
 					</div>                    
                     
 				))}
